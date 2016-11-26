@@ -1,2 +1,2 @@
 # 9zilla-plain
-Debian Workspace of the smallest composition
+9zilla of the smallest composition
