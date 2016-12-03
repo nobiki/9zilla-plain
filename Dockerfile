@@ -3,7 +3,7 @@ MAINTAINER Naoaki Obiki
 ARG username="9zilla"
 ARG password="9zilla"
 RUN apt-get update
-RUN apt-get install -y make gcc g++
+RUN apt-get install -y make gcc g++ lsb-release
 RUN apt-get install -y vim git tig bzip2 unzip tree sed bash-completion dbus sudo openssl curl wget expect cron
 RUN apt-get install -y vim dnsutils procps siege pandoc locales dialog htop inetutils-traceroute iftop bmon iptraf nload slurm sl toilet lolcat
 RUN mkdir /home/$username
@@ -37,6 +37,8 @@ RUN sudo -u $username cp /home/$username/gitwork/bitbucket/dotfiles/.bash_profil
 RUN sudo -u $username cp /home/$username/gitwork/bitbucket/dotfiles/.gitconfig /home/$username/.gitconfig
 RUN sudo -u $username mkdir -p /home/$username/.ssh/
 RUN sudo -u $username cp /home/$username/gitwork/bitbucket/dotfiles/.ssh/config /home/$username/.ssh/config
+RUN curl -o /usr/local/bin/hcat "https://raw.githubusercontent.com/nobiki/bash-hcat/master/hcat"
+RUN chmod +x /usr/local/bin/hcat
 RUN curl -o /usr/local/bin/jq "http://stedolan.github.io/jq/download/linux64/jq"
 RUN chmod +x /usr/local/bin/jq
 ADD archives/peco_linux_amd64/peco /usr/local/bin/
