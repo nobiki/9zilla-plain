@@ -5,3 +5,4 @@ RUN apt-get update
 
 #include "./include/useradd.docker"
 #include "./include/plain.docker"
+#include "./include/direnv.docker"
