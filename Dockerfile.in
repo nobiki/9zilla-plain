@@ -1,8 +1,10 @@
 FROM debian:jessie
 MAINTAINER Naoaki Obiki
 
-RUN apt-get update
+RUN apt-get update && apt-get install -y sudo git
 
 #include "./include/useradd.docker"
-#include "./include/plain.docker"
+#include "./include/base.docker"
+
 #include "./include/direnv.docker"
+
